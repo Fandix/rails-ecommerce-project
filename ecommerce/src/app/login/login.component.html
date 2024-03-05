@@ -1,0 +1,33 @@
+<div style="height: 100%; width: 100%;" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card style="width: 500px;">
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="formGroup" fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Username" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Eamil</mat-label>
+          <input matInput placeholder="Email" formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="Password" formControlName="password">
+        </mat-form-field>
+
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+          <div class="button">
+            <button mat-button (click)="submit()" [disabled]="formGroup.invalid">Login</button>
+          </div>
+  
+          <div class="button">
+            <button mat-button (click)="onSignupClicked()">Signup</button>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
